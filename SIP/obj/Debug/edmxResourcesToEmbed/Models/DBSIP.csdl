@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SIPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="SIPModel.Admin" />
+    <EntitySet Name="BahanBakar" EntityType="SIPModel.BahanBakar" />
+    <EntitySet Name="DetailTagihan" EntityType="SIPModel.DetailTagihan" />
+    <EntitySet Name="JenisKendaraan" EntityType="SIPModel.JenisKendaraan" />
+    <EntitySet Name="JenisTagihan" EntityType="SIPModel.JenisTagihan" />
+    <EntitySet Name="Kendaraan" EntityType="SIPModel.Kendaraan" />
+    <EntitySet Name="Kota" EntityType="SIPModel.Kota" />
+    <EntitySet Name="Merek" EntityType="SIPModel.Merek" />
+    <EntitySet Name="PemilikKendaraan" EntityType="SIPModel.PemilikKendaraan" />
+    <EntitySet Name="Provinsi" EntityType="SIPModel.Provinsi" />
+    <EntitySet Name="Samsat" EntityType="SIPModel.Samsat" />
+    <EntitySet Name="Tagihan" EntityType="SIPModel.Tagihan" />
+    <EntitySet Name="Warna" EntityType="SIPModel.Warna" />
+    <AssociationSet Name="FK_Kendaraan_BahanBakar" Association="SIPModel.FK_Kendaraan_BahanBakar">
+      <End Role="BahanBakar" EntitySet="BahanBakar" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailTagihan_JenisTagihan" Association="SIPModel.FK_DetailTagihan_JenisTagihan">
+      <End Role="JenisTagihan" EntitySet="JenisTagihan" />
+      <End Role="DetailTagihan" EntitySet="DetailTagihan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailTagihan_Tagihan" Association="SIPModel.FK_DetailTagihan_Tagihan">
+      <End Role="Tagihan" EntitySet="Tagihan" />
+      <End Role="DetailTagihan" EntitySet="DetailTagihan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_JenisKendaraan" Association="SIPModel.FK_Kendaraan_JenisKendaraan">
+      <End Role="JenisKendaraan" EntitySet="JenisKendaraan" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_Merek" Association="SIPModel.FK_Kendaraan_Merek">
+      <End Role="Merek" EntitySet="Merek" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_PemilikKendaraan" Association="SIPModel.FK_Kendaraan_PemilikKendaraan">
+      <End Role="PemilikKendaraan" EntitySet="PemilikKendaraan" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_Samsat" Association="SIPModel.FK_Kendaraan_Samsat">
+      <End Role="Samsat" EntitySet="Samsat" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_Tagihan" Association="SIPModel.FK_Kendaraan_Tagihan">
+      <End Role="Tagihan" EntitySet="Tagihan" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_Warna" Association="SIPModel.FK_Kendaraan_Warna">
+      <End Role="Warna" EntitySet="Warna" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kendaraan_Warna1" Association="SIPModel.FK_Kendaraan_Warna1">
+      <End Role="Warna" EntitySet="Warna" />
+      <End Role="Kendaraan" EntitySet="Kendaraan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kota_Provinsi" Association="SIPModel.FK_Kota_Provinsi">
+      <End Role="Provinsi" EntitySet="Provinsi" />
+      <End Role="Kota" EntitySet="Kota" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Samsat_Kota" Association="SIPModel.FK_Samsat_Kota">
+      <End Role="Kota" EntitySet="Kota" />
+      <End Role="Samsat" EntitySet="Samsat" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="JenisUser" Type="Int32" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BahanBakar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_BahanBakar" FromRole="BahanBakar" ToRole="Kendaraan" />
+  </EntityType>
+  <EntityType Name="DetailTagihan">
+    <Key>
+      <PropertyRef Name="TagihanID" />
+      <PropertyRef Name="JenisTagihanID" />
+    </Key>
+    <Property Name="TagihanID" Type="Int32" Nullable="false" />
+    <Property Name="JenisTagihanID" Type="Int32" Nullable="false" />
+    <Property Name="Jumlah" Type="Int32" />
+    <Property Name="Denda" Type="Int32" />
+    <NavigationProperty Name="JenisTagihan" Relationship="SIPModel.FK_DetailTagihan_JenisTagihan" FromRole="DetailTagihan" ToRole="JenisTagihan" />
+    <NavigationProperty Name="Tagihan" Relationship="SIPModel.FK_DetailTagihan_Tagihan" FromRole="DetailTagihan" ToRole="Tagihan" />
+  </EntityType>
+  <EntityType Name="JenisKendaraan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Jenis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_JenisKendaraan" FromRole="JenisKendaraan" ToRole="Kendaraan" />
+  </EntityType>
+  <EntityType Name="JenisTagihan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersenDenda" Type="Double" />
+    <NavigationProperty Name="DetailTagihan" Relationship="SIPModel.FK_DetailTagihan_JenisTagihan" FromRole="JenisTagihan" ToRole="DetailTagihan" />
+  </EntityType>
+  <EntityType Name="Kendaraan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PemilikKendaraanID" Type="Int32" Nullable="false" />
+    <Property Name="SamsatID" Type="Int32" Nullable="false" />
+    <Property Name="MerekID" Type="Int32" Nullable="false" />
+    <Property Name="JenisKendaraanID" Type="Int32" Nullable="false" />
+    <Property Name="WarnaID" Type="Int32" Nullable="false" />
+    <Property Name="WarnaTNKBID" Type="Int32" Nullable="false" />
+    <Property Name="BahanBakarID" Type="Int32" Nullable="false" />
+    <Property Name="NoPolisi" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Tipe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TahunPembuatan" Type="Int32" />
+    <Property Name="TahunPerakitan" Type="Int32" />
+    <Property Name="IsiSilinder" Type="Int32" Nullable="false" />
+    <Property Name="NoMesin" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NoRangka" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NoBPKB" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BahanBakar" Relationship="SIPModel.FK_Kendaraan_BahanBakar" FromRole="Kendaraan" ToRole="BahanBakar" />
+    <NavigationProperty Name="JenisKendaraan" Relationship="SIPModel.FK_Kendaraan_JenisKendaraan" FromRole="Kendaraan" ToRole="JenisKendaraan" />
+    <NavigationProperty Name="Merek" Relationship="SIPModel.FK_Kendaraan_Merek" FromRole="Kendaraan" ToRole="Merek" />
+    <NavigationProperty Name="PemilikKendaraan" Relationship="SIPModel.FK_Kendaraan_PemilikKendaraan" FromRole="Kendaraan" ToRole="PemilikKendaraan" />
+    <NavigationProperty Name="Samsat" Relationship="SIPModel.FK_Kendaraan_Samsat" FromRole="Kendaraan" ToRole="Samsat" />
+    <NavigationProperty Name="Tagihan" Relationship="SIPModel.FK_Kendaraan_Tagihan" FromRole="Kendaraan" ToRole="Tagihan" />
+    <NavigationProperty Name="Warna" Relationship="SIPModel.FK_Kendaraan_Warna" FromRole="Kendaraan" ToRole="Warna" />
+    <NavigationProperty Name="Warna1" Relationship="SIPModel.FK_Kendaraan_Warna1" FromRole="Kendaraan" ToRole="Warna" />
+  </EntityType>
+  <EntityType Name="Kota">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinsiID" Type="Int32" Nullable="false" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Provinsi" Relationship="SIPModel.FK_Kota_Provinsi" FromRole="Kota" ToRole="Provinsi" />
+    <NavigationProperty Name="Samsat" Relationship="SIPModel.FK_Samsat_Kota" FromRole="Kota" ToRole="Samsat" />
+  </EntityType>
+  <EntityType Name="Merek">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_Merek" FromRole="Merek" ToRole="Kendaraan" />
+  </EntityType>
+  <EntityType Name="PemilikKendaraan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoKTP" Type="Int32" Nullable="false" />
+    <Property Name="NoNPWP" Type="Int32" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Alamat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KodePos" Type="Int32" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_PemilikKendaraan" FromRole="PemilikKendaraan" ToRole="Kendaraan" />
+  </EntityType>
+  <EntityType Name="Provinsi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kota" Relationship="SIPModel.FK_Kota_Provinsi" FromRole="Provinsi" ToRole="Kota" />
+  </EntityType>
+  <EntityType Name="Samsat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KotaID" Type="Int32" Nullable="false" />
+    <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_Samsat" FromRole="Samsat" ToRole="Kendaraan" />
+    <NavigationProperty Name="Kota" Relationship="SIPModel.FK_Samsat_Kota" FromRole="Samsat" ToRole="Kota" />
+  </EntityType>
+  <EntityType Name="Tagihan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KendaraanID" Type="Int32" Nullable="false" />
+    <Property Name="TanggalMasaBerlaku" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="KodeBayar" Type="Int32" />
+    <Property Name="StatusBayar" Type="Boolean" />
+    <NavigationProperty Name="DetailTagihan" Relationship="SIPModel.FK_DetailTagihan_Tagihan" FromRole="Tagihan" ToRole="DetailTagihan" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_Tagihan" FromRole="Tagihan" ToRole="Kendaraan" />
+  </EntityType>
+  <EntityType Name="Warna">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nama" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kendaraan" Relationship="SIPModel.FK_Kendaraan_Warna" FromRole="Warna" ToRole="Kendaraan" />
+    <NavigationProperty Name="Kendaraan1" Relationship="SIPModel.FK_Kendaraan_Warna1" FromRole="Warna" ToRole="Kendaraan" />
+  </EntityType>
+  <Association Name="FK_Kendaraan_BahanBakar">
+    <End Type="SIPModel.BahanBakar" Role="BahanBakar" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BahanBakar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="BahanBakarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailTagihan_JenisTagihan">
+    <End Type="SIPModel.JenisTagihan" Role="JenisTagihan" Multiplicity="1" />
+    <End Type="SIPModel.DetailTagihan" Role="DetailTagihan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JenisTagihan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailTagihan">
+        <PropertyRef Name="JenisTagihanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailTagihan_Tagihan">
+    <End Type="SIPModel.Tagihan" Role="Tagihan" Multiplicity="1" />
+    <End Type="SIPModel.DetailTagihan" Role="DetailTagihan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tagihan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailTagihan">
+        <PropertyRef Name="TagihanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_JenisKendaraan">
+    <End Type="SIPModel.JenisKendaraan" Role="JenisKendaraan" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JenisKendaraan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="JenisKendaraanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_Merek">
+    <End Type="SIPModel.Merek" Role="Merek" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Merek">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="MerekID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_PemilikKendaraan">
+    <End Type="SIPModel.PemilikKendaraan" Role="PemilikKendaraan" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PemilikKendaraan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="PemilikKendaraanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_Samsat">
+    <End Type="SIPModel.Samsat" Role="Samsat" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Samsat">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="SamsatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_Tagihan">
+    <End Type="SIPModel.Tagihan" Role="Tagihan" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tagihan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="PemilikKendaraanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_Warna">
+    <End Type="SIPModel.Warna" Role="Warna" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warna">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="WarnaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kendaraan_Warna1">
+    <End Type="SIPModel.Warna" Role="Warna" Multiplicity="1" />
+    <End Type="SIPModel.Kendaraan" Role="Kendaraan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warna">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kendaraan">
+        <PropertyRef Name="WarnaTNKBID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kota_Provinsi">
+    <End Type="SIPModel.Provinsi" Role="Provinsi" Multiplicity="1" />
+    <End Type="SIPModel.Kota" Role="Kota" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinsi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kota">
+        <PropertyRef Name="ProvinsiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Samsat_Kota">
+    <End Type="SIPModel.Kota" Role="Kota" Multiplicity="1" />
+    <End Type="SIPModel.Samsat" Role="Samsat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kota">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Samsat">
+        <PropertyRef Name="KotaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

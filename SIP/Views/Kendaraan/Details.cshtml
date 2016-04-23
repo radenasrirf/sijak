@@ -1,0 +1,146 @@
+﻿@model SIP.Models.Kendaraan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kendaraan</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NoPolisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoPolisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TahunPembuatan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TahunPembuatan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TahunPerakitan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TahunPerakitan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsiSilinder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsiSilinder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoMesin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoMesin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoRangka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoRangka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoBPKB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoBPKB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BahanBakar.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BahanBakar.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JenisKendaraan.Jenis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JenisKendaraan.Jenis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Merek.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Merek.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PemilikKendaraan.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PemilikKendaraan.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Samsat.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Samsat.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tagihan.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tagihan.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warna.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warna.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warna1.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warna1.Nama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

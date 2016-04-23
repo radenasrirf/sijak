@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="64eec3e3b5934c538883470b4d1f17c7" Name="Diagram1">
+        <EntityTypeShape EntityType="SIPModel.Admin" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="SIPModel.BahanBakar" Width="1.5" PointX="0.75" PointY="21" />
+        <EntityTypeShape EntityType="SIPModel.DetailTagihan" Width="1.5" PointX="3" PointY="23.625" />
+        <EntityTypeShape EntityType="SIPModel.JenisKendaraan" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="SIPModel.JenisTagihan" Width="1.5" PointX="0.75" PointY="29.75" />
+        <EntityTypeShape EntityType="SIPModel.Kendaraan" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="SIPModel.Kota" Width="1.5" PointX="1.5" PointY="15.25" />
+        <EntityTypeShape EntityType="SIPModel.Merek" Width="1.5" PointX="0.75" PointY="26.75" />
+        <EntityTypeShape EntityType="SIPModel.PemilikKendaraan" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="SIPModel.Provinsi" Width="1.5" PointX="1.5" PointY="18.375" />
+        <EntityTypeShape EntityType="SIPModel.Samsat" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="SIPModel.Tagihan" Width="1.5" PointX="0.75" PointY="23.375" />
+        <EntityTypeShape EntityType="SIPModel.Warna" Width="1.5" PointX="0.75" PointY="3" />
+        <AssociationConnector Association="SIPModel.FK_Admin_Samsat" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_BahanBakar" />
+        <AssociationConnector Association="SIPModel.FK_DetailTagihan_JenisTagihan" />
+        <AssociationConnector Association="SIPModel.FK_DetailTagihan_Tagihan" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_JenisKendaraan" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_Merek" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_PemilikKendaraan" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_Samsat" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_Tagihan" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_Warna" />
+        <AssociationConnector Association="SIPModel.FK_Kendaraan_Warna1" />
+        <AssociationConnector Association="SIPModel.FK_Kota_Provinsi" />
+        <AssociationConnector Association="SIPModel.FK_Samsat_Kota" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

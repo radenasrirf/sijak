@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SIPModelStoreContainer" CdmEntityContainer="SIPEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="SIPModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="JenisUser" ColumnName="JenisUser" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BahanBakar">
+      <EntityTypeMapping TypeName="SIPModel.BahanBakar">
+        <MappingFragment StoreEntitySet="BahanBakar">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetailTagihan">
+      <EntityTypeMapping TypeName="SIPModel.DetailTagihan">
+        <MappingFragment StoreEntitySet="DetailTagihan">
+          <ScalarProperty Name="Denda" ColumnName="Denda" />
+          <ScalarProperty Name="Jumlah" ColumnName="Jumlah" />
+          <ScalarProperty Name="JenisTagihanID" ColumnName="JenisTagihanID" />
+          <ScalarProperty Name="TagihanID" ColumnName="TagihanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JenisKendaraan">
+      <EntityTypeMapping TypeName="SIPModel.JenisKendaraan">
+        <MappingFragment StoreEntitySet="JenisKendaraan">
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Jenis" ColumnName="Jenis" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JenisTagihan">
+      <EntityTypeMapping TypeName="SIPModel.JenisTagihan">
+        <MappingFragment StoreEntitySet="JenisTagihan">
+          <ScalarProperty Name="PersenDenda" ColumnName="PersenDenda" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kendaraan">
+      <EntityTypeMapping TypeName="SIPModel.Kendaraan">
+        <MappingFragment StoreEntitySet="Kendaraan">
+          <ScalarProperty Name="NoBPKB" ColumnName="NoBPKB" />
+          <ScalarProperty Name="NoRangka" ColumnName="NoRangka" />
+          <ScalarProperty Name="NoMesin" ColumnName="NoMesin" />
+          <ScalarProperty Name="IsiSilinder" ColumnName="IsiSilinder" />
+          <ScalarProperty Name="TahunPerakitan" ColumnName="TahunPerakitan" />
+          <ScalarProperty Name="TahunPembuatan" ColumnName="TahunPembuatan" />
+          <ScalarProperty Name="Tipe" ColumnName="Tipe" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="BahanBakarID" ColumnName="BahanBakarID" />
+          <ScalarProperty Name="WarnaTNKBID" ColumnName="WarnaTNKBID" />
+          <ScalarProperty Name="WarnaID" ColumnName="WarnaID" />
+          <ScalarProperty Name="JenisKendaraanID" ColumnName="JenisKendaraanID" />
+          <ScalarProperty Name="MerekID" ColumnName="MerekID" />
+          <ScalarProperty Name="SamsatID" ColumnName="SamsatID" />
+          <ScalarProperty Name="PemilikKendaraanID" ColumnName="PemilikKendaraanID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kota">
+      <EntityTypeMapping TypeName="SIPModel.Kota">
+        <MappingFragment StoreEntitySet="Kota">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ProvinsiID" ColumnName="ProvinsiID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Merek">
+      <EntityTypeMapping TypeName="SIPModel.Merek">
+        <MappingFragment StoreEntitySet="Merek">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PemilikKendaraan">
+      <EntityTypeMapping TypeName="SIPModel.PemilikKendaraan">
+        <MappingFragment StoreEntitySet="PemilikKendaraan">
+          <ScalarProperty Name="KodePos" ColumnName="KodePos" />
+          <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="NoNPWP" ColumnName="NoNPWP" />
+          <ScalarProperty Name="NoKTP" ColumnName="NoKTP" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinsi">
+      <EntityTypeMapping TypeName="SIPModel.Provinsi">
+        <MappingFragment StoreEntitySet="Provinsi">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Samsat">
+      <EntityTypeMapping TypeName="SIPModel.Samsat">
+        <MappingFragment StoreEntitySet="Samsat">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="KotaID" ColumnName="KotaID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tagihan">
+      <EntityTypeMapping TypeName="SIPModel.Tagihan">
+        <MappingFragment StoreEntitySet="Tagihan">
+          <ScalarProperty Name="StatusBayar" ColumnName="StatusBayar" />
+          <ScalarProperty Name="KodeBayar" ColumnName="KodeBayar" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="TanggalMasaBerlaku" ColumnName="TanggalMasaBerlaku" />
+          <ScalarProperty Name="KendaraanID" ColumnName="KendaraanID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warna">
+      <EntityTypeMapping TypeName="SIPModel.Warna">
+        <MappingFragment StoreEntitySet="Warna">
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

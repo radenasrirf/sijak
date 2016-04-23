@@ -1,0 +1,123 @@
+﻿@model IEnumerable<SIP.Models.Kendaraan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NoPolisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TahunPembuatan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TahunPerakitan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsiSilinder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoMesin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoRangka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoBPKB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BahanBakar.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JenisKendaraan.Jenis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Merek.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PemilikKendaraan.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Samsat.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tagihan.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warna.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warna1.Nama)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoPolisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TahunPembuatan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TahunPerakitan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsiSilinder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoMesin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoRangka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoBPKB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BahanBakar.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JenisKendaraan.Jenis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Merek.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PemilikKendaraan.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Samsat.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tagihan.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warna.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warna1.Nama)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

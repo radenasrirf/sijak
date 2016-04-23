@@ -1,0 +1,152 @@
+﻿@model SIP.Models.Kendaraan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Kendaraan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NoPolisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoPolisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TahunPembuatan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TahunPembuatan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TahunPerakitan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TahunPerakitan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsiSilinder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsiSilinder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoMesin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoMesin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoRangka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoRangka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoBPKB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoBPKB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BahanBakar.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BahanBakar.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JenisKendaraan.Jenis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JenisKendaraan.Jenis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Merek.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Merek.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PemilikKendaraan.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PemilikKendaraan.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Samsat.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Samsat.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tagihan.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tagihan.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warna.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warna.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warna1.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warna1.Nama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
